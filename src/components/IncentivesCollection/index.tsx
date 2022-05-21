@@ -29,7 +29,6 @@ export const IncentivesCollection: FC = () => {
   ];
 
   const hasParity = incentives.length % 2 == 0;
-  console.log(hasParity);
 
   return (
     <Grid
