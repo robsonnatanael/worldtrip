@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Heading } from '@chakra-ui/react';
 
 import { Banner } from '../components/Banner';
 import { Divider } from '../components/Divider';
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <Banner />
       <IncentivesCollection />
       <Divider />
-      <Text
+      <Heading
         textAlign="center"
         fontWeight="500"
         fontSize={['lg', '3xl', '4xl']}
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         Vamos nessa?
         <br />
         Então escolha seu continente
-      </Text>
+      </Heading>
     </Flex>
   );
 };
