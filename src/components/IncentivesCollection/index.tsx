@@ -5,31 +5,6 @@ import { Grid, GridItem } from '@chakra-ui/react';
 import { IncentivesCollectionItem } from './IncentivesCollectionItem';
 
 export const IncentivesCollection: FC = () => {
-  const incentives = [
-    {
-      icon: 'cocktail',
-      text: 'vida noturna',
-    },
-    {
-      icon: 'surf',
-      text: 'praia',
-    },
-    {
-      icon: 'building',
-      text: 'moderno',
-    },
-    {
-      icon: 'museum',
-      text: 'clássico',
-    },
-    {
-      icon: 'earth',
-      text: 'e mais...',
-    },
-  ];
-
-  const hasParity = incentives.length % 2 == 0;
-
   return (
     <Grid
       w="100%"
@@ -41,39 +16,21 @@ export const IncentivesCollection: FC = () => {
       templateColumns={['1fr 1fr', '1fr 1fr', '1fr 1fr', 'repeat(5, 1fr)']}
       gap={[1, 5]}
     >
-      {incentives.map((incentive, index) => (
-        <>
-          {hasParity ? (
-            <GridItem>
-              <IncentivesCollectionItem
-                key={incentive.icon}
-                icon={incentive.icon}
-                text={incentive.text}
-              />
-            </GridItem>
-          ) : (
-            <>
-              {index + 1 != incentives.length ? (
-                <GridItem>
-                  <IncentivesCollectionItem
-                    key={incentive.icon}
-                    icon={incentive.icon}
-                    text={incentive.text}
-                  />
-                </GridItem>
-              ) : (
-                <GridItem colSpan={[2, 2, 2, 1]}>
-                  <IncentivesCollectionItem
-                    key={incentive.icon}
-                    icon={incentive.icon}
-                    text={incentive.text}
-                  />
-                </GridItem>
-              )}
-            </>
-          )}
-        </>
-      ))}
+      <GridItem>
+        <IncentivesCollectionItem icon="cocktail" text="vida noturna" />
+      </GridItem>
+      <GridItem>
+        <IncentivesCollectionItem icon="surf" text="praia" />
+      </GridItem>
+      <GridItem>
+        <IncentivesCollectionItem icon="building" text="moderno" />
+      </GridItem>
+      <GridItem>
+        <IncentivesCollectionItem icon="museum" text="clássico" />
+      </GridItem>
+      <GridItem colSpan={[2, 2, 2, 1]}>
+        <IncentivesCollectionItem icon="earth" text="e mais..." />
+      </GridItem>
     </Grid>
   );
 };
