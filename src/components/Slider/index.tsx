@@ -42,7 +42,7 @@ export const Slider: FC = () => {
             textAlign="center"
             bgPosition="center"
           >
-            <Link href="/continent/europe">
+            <Link href="/continent">
               <a>
                 <Heading
                   fontSize={['3xl', '4xl', '5xl']}
@@ -77,7 +77,7 @@ export const Slider: FC = () => {
             textAlign="center"
             bgPosition="center"
           >
-            <Link href="/continent/europe">
+            <Link href="/continent">
               <a>
                 <Heading
                   fontSize={['3xl', '4xl', '5xl']}
