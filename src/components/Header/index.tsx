@@ -1,8 +1,15 @@
 import { FC } from 'react';
+import { RiArrowLeftSLine } from 'react-icons/ri';
 
-import { Flex, Grid, Image } from '@chakra-ui/react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { Flex, Grid, Icon, Image } from '@chakra-ui/react';
 
 export const Header: FC = () => {
+  const { asPath } = useRouter();
+  const notHomePage = asPath !== '/';
+
   return (
     <Flex
       as="header"
@@ -22,6 +29,17 @@ export const Header: FC = () => {
         alignItems="center"
         justifyContent="center"
       >
+        {notHomePage && (
+          <Link href="/">
+            <a>
+              <Icon
+                as={RiArrowLeftSLine}
+                fontSize={[20, 40]}
+                justifySelf="start"
+              />
+            </a>
+          </Link>
+        )}
         <Image
           src="/assets/images/logo.svg"
           alt="logo worldtrip"
